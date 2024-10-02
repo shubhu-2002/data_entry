@@ -35,3 +35,25 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thotnr Project</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <input placeholder="Name" name="name" required>
+        <input placeholder="Post Content" name="post" required>
+        <input type="submit" value="submit">
+    </form>
+
+    
+    {% for post in posts %}
+    <div>{{ post.name }}: {{ post.content }}</div>
+    {% endfor %}
+</body>
+</html>
